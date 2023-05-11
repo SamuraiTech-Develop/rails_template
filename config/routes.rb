@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  # PostsController
+  get 'posts/add', to: 'posts#add', as: 'add_post'
+
 end
