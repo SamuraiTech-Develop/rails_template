@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Src</title>
+    <title>SNS App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,34 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="app">
+      <!-- 画面上部に表示するナビゲーションバーです -->
+      <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            SNS App
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- ここまでナビゲーションバー -->
+
+      <main class="py-4">
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
