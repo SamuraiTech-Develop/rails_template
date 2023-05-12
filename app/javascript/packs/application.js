@@ -1,1 +1,3 @@
-require('./stylesheets/application.scss')
+import "bootstrap"
+
+// JavaScriptのコード
