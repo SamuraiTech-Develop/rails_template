@@ -1,6 +1,22 @@
 {
+  "name": "sns_app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "bin/webpack-dev-server",
+    "build": "bin/webpack"
+  },
   "dependencies": {
+    "@rails/actioncable": "^7.0.4-3",
+    "@rails/actiontext": "^7.0.4-3",
+    "@rails/activestorage": "^7.0.4-3",
+    "@rails/ujs": "^7.0.4-3",
     "@rails/webpacker": "5.4.4",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.2.3",
+    "sass": "^1.62.1",
+    "sass-loader": "^10.1.1",
+    "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },

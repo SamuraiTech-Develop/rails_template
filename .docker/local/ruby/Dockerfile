@@ -6,7 +6,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 RUN apt-get update && \
     apt-get install -y build-essential libpq-dev nodejs npm vim yarn && \
     npm install n -g && \
-    n 18.14.2 && \
+    n 16.0.0 && \
     gem install rails
 
 WORKDIR /src
