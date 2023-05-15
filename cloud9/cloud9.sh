@@ -23,5 +23,9 @@ sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 sudo ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/bin/docker-compose
 
 # yarn install
-curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
-sudo yum install yarn
+#curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+#sudo yum install yarn
+
+# node version
+nvm install 16.0.0
+nvm use 16.0.0

@@ -42,6 +42,10 @@
 
 /public/packs
 /public/packs-test
+/public/js/*
+!/public/js/.keep
+/public/css/*
+!/public/css/.keep
 /node_modules
 /yarn-error.log
 yarn-debug.log*
