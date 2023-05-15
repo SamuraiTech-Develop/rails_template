@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   # PostsController
   get 'posts/add', to: 'posts#add', as: 'add_post'
 
+  # ProfileController
+  get 'profile/create', to: 'profile#add', as: 'add_profile'
+  get 'profile/edit', to: 'profile#edit', as: 'edit_profile'
+
 end
