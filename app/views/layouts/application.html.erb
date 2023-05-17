@@ -6,31 +6,45 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="<%= mix('/css/app.css') %>">
+     <script src="<%= mix('/js/turbo.js') %>"></script>
+     <script src="<%= mix('/js/bootstrap.js') %>"></script>
   </head>
 
   <body>
-    <div class="navbar-collapse" id="navbarToggleExternalContent">
-      <div class="navbar-nav bg-light px-3">
-        <a class="nav-link px-1 pt-2 pb-1 text-dark nav-item" href="#">
-          投稿一覧
-        </a>
-        <a class="nav-link px-1 pt-1 pb-2 text-dark nav-item" href="#">
-          新規投稿
-        </a>
-      </div>
-    </div>
-    <nav class="navbar navbar-light bg-light px-3">
-      <div class="navbar-nav clear_box">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">SNS App</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <% if user_signed_in? %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              <%= link_to "投稿一覧", "/", class: "nav-link" %>
+              <%= link_to "新規投稿", add_post_path, class: "nav-link" %>
+            <% else %>
+              <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </nav>
-    <div class="bg-light text-dark min-vh-100 px-5 py-2">
+    
+    <!-- アラートメッセージ -->
+    <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger" role="alert">
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <div class="bg-white text-dark min-vh-100 px-5 py-3">
       <%= yield %>
     </div>
 
     <script src="<%= mix('/js/app.js') %>"></script>
-    <script src="<%= mix('/js/bootstrap.js') %>"></script>
   </body>
 </html>

@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # cloud9 host
   # すべてのホストを許可していますが、この設定はCloud9上で開発する場合のみ有効にしてください
-  # config.hosts.clear
+  config.hosts.clear
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
@@ -44,6 +44,8 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
+  
+  config.action_mailer.default_url_options = { host: 'localhost', port: 8081 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
