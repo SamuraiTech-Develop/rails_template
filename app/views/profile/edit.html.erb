@@ -1,3 +1,44 @@
-<div>
-  <h1>Myプロフィール編集</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>プロフィール編集</h2>
+            <%= form_with(url: update_profile_path, local: true, method: :post) do |f| %>
+
+                <% if @errors.present? %>
+                    <ul>
+                        <% @errors.each do |error| %>
+                            <li><%= error %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
+                <div class="form-group row mb-1">
+                    <label class="col-md-2">氏名</label>
+                    <div class="col-md-10">
+                        <%= f.text_field :name, class: "form-control" %>
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label class="col-md-2">性別</label>
+                    <div class="col-md-10">
+                        <%= f.text_field :gender, class: "form-control" %>
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label class="col-md-2">趣味</label>
+                    <div class="col-md-10">
+                        <%= f.text_field :hobby, class: "form-control" %>
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label class="col-md-2">自己紹介欄</label>
+                    <div class="col-md-10">
+                        <%= f.text_area :introduction, rows: 20, class: "form-control" %>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mb-1">
+                  <%= f.submit "更新", class: "btn btn-primary" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
 </div>

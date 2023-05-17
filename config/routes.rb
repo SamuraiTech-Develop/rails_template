@@ -8,9 +8,12 @@ Rails.application.routes.draw do
 
   # PostsController
   get 'posts/add', to: 'posts#add', as: 'add_post'
+  post 'posts/store', to: 'posts#store', as: 'store_post'
 
   # ProfileController
-  get 'profile/create', to: 'profile#add', as: 'add_profile'
+  get 'profile/add', to: 'profile#add', as: 'add_profile'
+  post '/profile/store', to: 'profile#store', as: 'store_profile'
   get 'profile/edit', to: 'profile#edit', as: 'edit_profile'
+  post '/profile/update', to: 'profile#update', as: 'update_profile'
 
 end

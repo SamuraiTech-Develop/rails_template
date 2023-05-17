@@ -3,8 +3,8 @@ class ProfileController < ApplicationController
     render 'profile/create'
   end
 
-  def create
-    redirect_to 'profile/create'
+  def store
+    redirect_to edit_profile_path
   end
 
   def edit
@@ -12,6 +12,6 @@ class ProfileController < ApplicationController
   end
 
   def update
-    redirect_to 'profile/edit'
+    redirect_to edit_profile_path
   end
 end
