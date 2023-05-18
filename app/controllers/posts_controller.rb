@@ -3,18 +3,23 @@ class PostsController < ApplicationController
     render 'posts/index'
   end
 
-  def add
-    render 'posts/create'
+  def new
+    @post = Post.new
+    render 'posts/new'
   end
 
-  def store
+  def create
     @post = Post.new(post_params)
-    
+
+    if params[:post][:image]
+      @post.image.attach(params[:post][:image])
+      @post.image_path = url_for(@post.image)
+    end
+
     if @post.save
-      flash[:notice] = '登録しました'
-      redirect_to index_post_path
+      redirect_to index_post_path, notice: '登録しました'
     else
-      render :add
+      render :new, status: :unprocessable_entity
     end
   end
   

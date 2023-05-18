@@ -1,10 +1,17 @@
 class ProfileController < ApplicationController
-  def add
-    render 'profile/create'
+  def new
+    @profile = Profile.new
+    render 'profile/new'
   end
 
-  def store
-    redirect_to edit_profile_path
+  def create
+    @profile = Profile.new(profile_params)
+    
+    if @profile.save
+      redirect_to edit_profile_path, notice: '登録しました'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -13,5 +20,10 @@ class ProfileController < ApplicationController
 
   def update
     redirect_to edit_profile_path
+  end
+  
+  private
+  def profile_params
+    params.require(:profile).permit(:name, :gender, :hobby, :introduction)
   end
 end

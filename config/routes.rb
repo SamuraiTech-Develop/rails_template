@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   get '/', to: 'posts#index', as: 'index_post'
 
   # PostsController
-  get 'posts/add', to: 'posts#add', as: 'add_post'
-  post 'posts/store', to: 'posts#store', as: 'store_post'
+  get 'posts/new', to: 'posts#new', as: 'new_post'
+  post 'posts/create', to: 'posts#create', as: 'create_post'
 
   # ProfileController
-  get 'profile/add', to: 'profile#add', as: 'add_profile'
-  post '/profile/store', to: 'profile#store', as: 'store_profile'
+  get 'profile/new', to: 'profile#new', as: 'new_profile'
+  post '/profile/create', to: 'profile#create', as: 'create_profile'
   get 'profile/edit', to: 'profile#edit', as: 'edit_profile'
   post '/profile/update', to: 'profile#update', as: 'update_profile'
 

@@ -2,20 +2,18 @@ ja:
   activerecord:
     models:
       post: 投稿
+      profile: プロフィール
     attributes:
       post:
         title: タイトル
         body: 本文
         image_path: 画像パス
-    errors:
-      models:
-        post:
-          attributes:
-            title:
-              blank: "を入力してください"
-              taken: "はすでに存在します"
-            body:
-              blank: "を入力してください"
+      profile:
+        name: 名前
+        gender: 性別
+        hobby: 趣味
+        introduction: 自己紹介欄
+    
   date:
     abbr_day_names:
     - 日
