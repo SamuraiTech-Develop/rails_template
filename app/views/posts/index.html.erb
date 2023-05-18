@@ -1,3 +1,49 @@
-<div>
-  <h1>投稿一覧</h1>
+<div class="container">
+  <div class="row mb-4">
+    <h2>投稿一覧</h2>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-10">
+      <%= form_with(url: index_post_path, method: :get, local: true) do |f| %>
+        <div class="form-group row">
+          <label class="col-md-2">タイトル</label>
+          <div class="col-md-8">
+            <%= f.text_field :title, value: @title, class: "form-control" %>
+          </div>
+          <div class="col-md-2">
+            <%= f.submit "検索", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-2 d-flex justify-content-end">
+      <%= link_to '新規投稿', new_post_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="list-posts col-md-12 mx-auto">
+      <div class="row">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th width="10%">ID</th>
+              <th width="20%">タイトル</th>
+              <th width="40%">本文</th>
+              <th width="10%">画像</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @posts.each do |post| %>
+              <tr>
+                <th><%= post.id %></th>
+                <td><%= post.title.truncate(100) %></td>
+                <td><%= post.body.truncate(150) %></td>
+                <td><%= image_tag post.image, class: 'post-image' if post.image.attached? %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
