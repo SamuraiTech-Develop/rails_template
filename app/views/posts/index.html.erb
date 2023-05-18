@@ -30,6 +30,7 @@
               <th width="20%">タイトル</th>
               <th width="40%">本文</th>
               <th width="10%">画像</th>
+              <th width="10%">編集</th>
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,7 @@
                 <td><%= post.title.truncate(100) %></td>
                 <td><%= post.body.truncate(150) %></td>
                 <td><%= image_tag post.image, class: 'post-image' if post.image.attached? %></td>
+                <td><%= link_to '編集', edit_post_path(post), class: "btn btn-primary" %></td>
               </tr>
             <% end %>
           </tbody>

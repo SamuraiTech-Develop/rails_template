@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h2>投稿編集</h2>
+      <%= form_with(url: update_post_path, model: @post, local: true, method: :post) do |f| %>
+
+        <% if @post.errors.any? %>
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <div class="d-flex justify-content-end mb-1">
+          <%= link_to '削除', delete_post_path(@post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
+        </div>
+        <div class="form-group row mb-1">
+          <label class="col-md-2">タイトル</label>
+          <div class="col-md-10">
+              <%= f.text_field :title, value: @post.title, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group row mb-1">
+          <label class="col-md-2">本文</label>
+          <div class="col-md-10">
+              <%= f.text_area :body, value: @post.body, rows: 20, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group row mb-1">
+          <label class="col-md-2">画像</label>
+          <div class="col-md-10">
+              <%= f.file_field :image, class: "form-control-file" %>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end mb-1">
+          <%= f.submit "更新", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
