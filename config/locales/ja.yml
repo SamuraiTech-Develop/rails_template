@@ -13,6 +13,8 @@ ja:
         gender: 性別
         hobby: 趣味
         introduction: 自己紹介欄
+      comment:
+        content: コメント
     
   date:
     abbr_day_names:

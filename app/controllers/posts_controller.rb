@@ -28,6 +28,13 @@ class PostsController < ApplicationController
     end
   end
   
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.where(post_id: params[:id])
+    render 'posts/show'
+  end
+  
   def edit
     @post = Post.find(params[:id])
     render 'posts/edit'

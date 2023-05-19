@@ -40,7 +40,7 @@
                 <td><%= post.title.truncate(100) %></td>
                 <td><%= post.body.truncate(150) %></td>
                 <td><%= image_tag post.image, class: 'post-image' if post.image.attached? %></td>
-                <td><%= link_to '編集', edit_post_path(post), class: "btn btn-primary" %></td>
+                <td><%= link_to '詳細', show_post_path(post), class: "btn btn-primary" %></td>
               </tr>
             <% end %>
           </tbody>

@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: { maximum: 255 }
   
   has_one_attached :image
+  has_many :comments, dependent: :destroy
 end
