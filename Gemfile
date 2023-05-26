@@ -49,6 +49,9 @@ gem 'mysql2'
 gem 'devise'
 gem 'dotenv-rails'
 # gem 'webpacker'
+# gem 'debase-ruby_core_source'
+# gem 'debase', '0.2.5.beta2'
+# gem 'ruby-debug-ide'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
