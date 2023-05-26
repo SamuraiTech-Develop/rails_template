@@ -1,14 +1,12 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;
-  color: #fff;
 }
 
 .main-container {
   margin-top: 80px;
   background: #ffffff;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 }
 
 .alert {

@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   # PostsController
   get '/', to: 'posts#index', as: 'index_posts'
   get 'posts/new', to: 'posts#new', as: 'new_post'
+  post 'posts/create', to: 'posts#create', as: 'create_post'
 
   # ProfileController
   get 'profile/new', to: 'profile#new', as: 'new_profile'
+  post 'profile/create', to: 'profile#create', as: 'create_profile'
   get 'profile/edit', to: 'profile#edit', as: 'edit_profile'
+  post 'profile/update', to: 'profile#update', as: 'update_profile'
 
 end
