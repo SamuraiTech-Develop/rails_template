@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   # PostsController
   get '/', to: 'posts#index', as: 'index_post'
   get 'posts/new', to: 'posts#new', as: 'new_post'
-  post 'posts/create', to: 'posts#create', as: 'create_post'
+  post 'posts/new', to: 'posts#create', as: 'create_post'
   get 'posts/edit/:id', to: 'posts#edit', as: 'edit_post'
-  post 'posts/update/:id', to: 'posts#update', as: 'update_post'
+  post 'posts/edit/:id', to: 'posts#update', as: 'update_post'
   delete 'posts/destroy/:id', to: 'posts#destroy', as: 'destroy_post'
+
+  # CommentsController
+  get 'posts/show/:post_id/comments/new', to: 'comments#new', as: 'new_comment'
+  post 'posts/show/:post_id/comments/new', to: 'comments#create', as: 'create_comment'
 
   # ProfileController
   get 'profile/new', to: 'profile#new', as: 'new_profile'
