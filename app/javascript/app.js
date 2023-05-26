@@ -1,5 +1,8 @@
+import { Turbo } from "@hotwired/turbo-rails"
+Turbo.session.drive = false
+
 // 画像プレビュー機能
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("turbo:load", function() {
   const imageUpload = document.getElementById('imageUpload');
   imageUpload.addEventListener('change', function() {
     const file = this.files[0];
