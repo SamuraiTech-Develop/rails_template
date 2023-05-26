@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get '/', to: 'posts#index', as: 'index_post'
   get 'posts/new', to: 'posts#new', as: 'new_post'
   post 'posts/create', to: 'posts#create', as: 'create_post'
+  get 'posts/edit/:id', to: 'posts#edit', as: 'edit_post'
+  post 'posts/update/:id', to: 'posts#update', as: 'update_post'
+  delete 'posts/destroy/:id', to: 'posts#destroy', as: 'destroy_post'
 
   # ProfileController
   get 'profile/new', to: 'profile#new', as: 'new_profile'

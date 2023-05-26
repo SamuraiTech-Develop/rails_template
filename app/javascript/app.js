@@ -1,6 +1,3 @@
-import { Turbo } from "@hotwired/turbo-rails"
-Turbo.session.drive = false
-
 // 画像プレビュー機能
 document.addEventListener("turbo:load", function() {
   const imageUpload = document.getElementById('imageUpload');
